@@ -20,6 +20,15 @@ function wmzcaselink_civicrm_alterTemplateFile($formName, &$form, $context, &$tp
       }
     }
     $form->assign('cases', $cases);
+		$form->assign('hide', false);
+		
+		$caseId = $form->getCaseId();
+		$case = civicrm_api3('Case', 'getsingle', array('id' => $caseId));
+		$coachingCaseTypeId = civicrm_api3('CaseType', 'getvalue', array('name' => 'coachingstraject', 'return' => 'id'));
+		if ($case['case_type_id'] == $coachingCaseTypeId) {
+    	$form->assign('hide', true);
+		}
+		
     $tplName = 'CRM/Wmzcaselink/Page/Cases.tpl';
   }
 }

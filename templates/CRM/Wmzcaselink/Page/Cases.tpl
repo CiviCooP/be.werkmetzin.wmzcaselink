@@ -1,3 +1,4 @@
+{if (!$hide)}
 <div id="case-caselink-cases" class="crm-accordion-wrapper collapsed">
 
     <div class="crm-accordion-header">{ts}Related sub cases{/ts}</div>
@@ -50,3 +51,4 @@
     });
     {/literal}
 </script>
+{/if}
