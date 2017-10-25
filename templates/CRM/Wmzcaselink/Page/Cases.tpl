@@ -46,7 +46,7 @@
     {literal}
     cj(function() {
         var caselinkCases = cj('#case-caselink-cases').detach();
-        cj('#{/literal}{$customGroupName}{literal}').after(caselinkCases);
+        cj('#case_custom_edit').before(caselinkCases);
     });
     {/literal}
 </script>
